@@ -66,3 +66,5 @@ async function ProjectZomboid() {
 
 
 }
+
+console.log('Hello World')
