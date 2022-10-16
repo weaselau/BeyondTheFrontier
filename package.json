@@ -1,0 +1,23 @@
+{
+    "name": "server-bot1",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "dev": "cd ./src && npx ts-node -r tsconfig-paths/register index.ts",
+        "build": "cd ./src && npx tsc --build && cd .. && npx ts-node ./util/package.ts",
+        "production": "node dist"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/gamedig": "^4.0.0",
+        "ts-node": "^10.9.1",
+        "tsconfig-paths": "^4.1.0",
+        "typescript": "^4.8.4"
+    },
+    "dependencies": {
+        "discord.js": "^14.6.0",
+        "gamedig": "^4.0.5"
+    }
+}
