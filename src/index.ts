@@ -61,10 +61,5 @@ async function ProjectZomboid() {
                         .setTimestamp(new Date())
                 ]
             })
-
         })
-
-
-        
-
 }
