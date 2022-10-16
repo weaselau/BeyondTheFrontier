@@ -55,7 +55,7 @@ async function ProjectZomboid() {
             _message.edit({
                 embeds: [
                     new EmbedBuilder()
-                        .setTitle('Project Zomboid')
+                        .setTitle('Project Zomboid...')
                         .setColor(resolveColor('#db2525'))
                         .setDescription('>>> The Server is Offline...')
                         .setTimestamp(new Date())
