@@ -14,7 +14,6 @@ export default function (game: 'przomboid' | 'minecraft', host: string, port: nu
             host: host,
             port: port
         }).then((state) => {
-            console.log(state)
             resolve(state)
         }).catch((error) => {
             reject(error)
