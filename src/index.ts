@@ -13,10 +13,8 @@ Client()
     .then(client => {
         ProjectZomboid()
         Minecraft()
-        setInterval(() =>{
-            ProjectZomboid
-            Minecraft
-        }, 1000 * 60 * 5)
+        setInterval( ProjectZomboid, 1000 * 60 * 5)
+        setInterval( Minecraft, 1000 * 60 * 5)
     })
 
 
