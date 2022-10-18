@@ -8,6 +8,8 @@ import { SlashCommandBuilder } from "discord.js"
 
 const Commands = [
 
+
+
     new SlashCommandBuilder()
         .setName('embed')
         .setDescription('Send an embed')
@@ -26,12 +28,12 @@ const Commands = [
 
 
     new SlashCommandBuilder()
-        .setName('rules')
+        .setName('Rules')
         .setDescription('Server Rules')
 
-        .addStringOption(option => option.setName('Rules').setDescription('Rules of the Server').setRequired(true))
-
+        .addStringOption(option => option.setName('Rules').setDescription('Rules of the Server').setRequired(true)),
         
+
         
 ]
 
