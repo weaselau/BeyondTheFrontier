@@ -42,11 +42,13 @@ async function ProjectZomboid() {
             _message.edit({
                 embeds: [
                     new EmbedBuilder()
-                        .setTitle('Project Zomboid')
+                        .setTitle(data.name)
                         .setColor(resolveColor('#20db16'))
                         .setFields([
                             { name: 'Player Count', value: `${data.players.length} / ${data.maxplayers}`, inline: false },
                             { name: 'Map', value: data.map, inline: false },
+                            { name: 'ping', value: '>>> ' + (data.ping) + _overflow, inline: false },
+                            { name: 'Environment - Weather', value: '>>> ' + (data.raw.environment) + _overflow, inline: false },
                             { name: 'Players', value: '>>> ' + (_players || 'There are No Players Online...') + _overflow, inline: false }
                         ])
                         .setTimestamp(new Date())
@@ -88,11 +90,12 @@ async function Minecraft() {
             _message.edit({
                 embeds: [
                     new EmbedBuilder()
-                        .setTitle('Minecraft')
+                        .setTitle(data.name)
                         .setColor(resolveColor('#20db16'))
                         .setFields([
                             { name: 'Player Count', value: `${data.players.length} / ${data.maxplayers}`, inline: false },
                             { name: 'Map', value: data.map, inline: false },
+                            { name: 'ping', value: '>>> ' + (data.ping) + _overflow, inline: false },
                             { name: 'Players', value: '>>> ' + (_players || 'There are No Players Online...') + _overflow, inline: false }
                         ])
                         .setTimestamp(new Date())
