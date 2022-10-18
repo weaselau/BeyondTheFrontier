@@ -25,8 +25,14 @@ const Commands = [
 
 
 
-        
+    new SlashCommandBuilder()
+        .setName('rules')
+        .setDescription('Server Rules')
 
+        .addStringOption(option => option.setName('Rules').setDescription('Rules of the Server').setRequired(true))
+
+        
+        
 ]
 
 export default Commands
