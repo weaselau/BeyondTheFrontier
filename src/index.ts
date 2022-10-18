@@ -36,7 +36,7 @@ async function ProjectZomboid() {
             const _players = data.players.join('\n').substring(0, 2000)
             const _overflow = _players.length == 2000 ? '\n\nThere are more players that cannot be loaded...' : ''
 
-
+            
             _message.edit({
                 embeds: [
                     new EmbedBuilder()
