@@ -37,8 +37,10 @@ async function ProjectZomboid() {
     Query('przomboid', '120.153.241.223', 16261)
         .then((data: any) => {
 
-            const _players = data.players.join('\n').substring(0, 2000)
+            const _rawPlayers = data.players.map((player: any) => `${player.name} - ${player.raw.time.floor()}`)
+            const _players = _rawPlayers.join('\n').substring(0, 2000)
             const _overflow = _players.length == 2000 ? '\n\nThere are more players that cannot be loaded...' : ''
+            console.log(data.players)
 
 
             _message.edit({
