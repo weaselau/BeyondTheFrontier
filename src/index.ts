@@ -37,7 +37,11 @@ async function ProjectZomboid() {
     Query('przomboid', '120.153.241.223', 16261)
         .then((data: any) => {
 
-            const _rawPlayers = data.players.map((player: any) => `${player.name} - ${Math.floor(player.raw.time)}`)
+            const _rawPlayers = data.players.map((player: any) => {
+                const _timestamp = new Date(Math.floor(player.raw.time * 1000))
+
+                return `${player.name} - ${String(_timestamp.getHours()).padStart(2, '0')}:${String(_timestamp.getMinutes()).padStart(2, '0')}:${String(_timestamp.getSeconds()).padStart(2, '0')}`
+            })
             const _players = _rawPlayers.join('\n').substring(0, 2000)
             const _overflow = _players.length == 2000 ? '\n\nThere are more players that cannot be loaded...' : ''
             console.log(data.players)
@@ -60,7 +64,7 @@ async function ProjectZomboid() {
             })
 
         })
-        .catch(error => {
+        .catch(() => {
 
             _message.edit({
                 embeds: [
@@ -107,7 +111,7 @@ async function Minecraft() {
             })
 
         })
-        .catch(error => {
+        .catch(() => {
 
             _message.edit({
                 embeds: [
