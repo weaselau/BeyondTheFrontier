@@ -17,6 +17,6 @@ export default (interaction: ChatInputCommandInteraction<CacheType>) => {
         ]
     })
         .then(() => interaction.reply({ content: "Embed Successfully Sent!", ephemeral: true }))
-        .catch(err => interaction.reply({content: `Failed to send embed!\n\n\`\`\`ts\n${err}\`\`\``, ephemeral: true}))
+        .catch(err => interaction.reply({ content: `Failed to send embed!\n\n\`\`\`ts\n${err}\`\`\``, ephemeral: true }))
 
 }
