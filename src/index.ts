@@ -40,7 +40,7 @@ async function ProjectZomboid() {
 
             const _rawPlayers = data.players.map((player: any) => {
                 const _timestamp = new Date(Math.floor(player.raw.time * 1000))
-
+               
                 return `${player.name} - ${String(_timestamp.getHours()).padStart(2, '0')}:${String(_timestamp.getMinutes()).padStart(2, '0')}:${String(_timestamp.getSeconds()).padStart(2, '0')}`
             })
             const _players = _rawPlayers.join('\n').substring(0, 2000)
