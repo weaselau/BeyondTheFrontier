@@ -29,7 +29,13 @@ const Commands = [
 
     new SlashCommandBuilder()
         .setName('rules')
-        .setDescription('Server Rules')
+        .setDescription('Server Rules'),
+
+
+
+    new SlashCommandBuilder()
+        .setName('connection')
+        .setDescription('Connection Tab')
 
 
 
