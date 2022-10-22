@@ -16,7 +16,7 @@ Client()
         setInterval(() => {
             ProjectZomboid()
             Minecraft()
-        }, 1000 * 60 * 5)
+        }, 1000 * 60 * 3)
     })
 
 
