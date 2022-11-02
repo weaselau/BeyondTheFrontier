@@ -6,7 +6,7 @@ import Gamedig from 'gamedig'
 
 //? Query Game
 
-export default function (game: 'przomboid' | 'minecraft', host: string, port: number) {
+export default function (game: 'przomboid' | 'minecraft' | 'spaceengineers', host: string, port: number) {
     return new Promise((resolve, reject) => {
 
         Gamedig.query({
