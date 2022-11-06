@@ -1,7 +1,7 @@
 import * as Discord from 'discord.js'
 import { _client } from '.'
 
-var channel = _client.channels.cache.get('1038753283898097765')
+var channel = _client?.channels.cache.get('1038753283898097765')
 
 
 
