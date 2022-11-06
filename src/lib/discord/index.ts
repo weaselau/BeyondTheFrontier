@@ -15,7 +15,7 @@ import * as Events from '@lib/discord/events'
 
 //? Client
 
-let _client: Discord.Client
+export let _client: Discord.Client
 
 export default function Client(): Promise<Discord.Client> {
     return new Promise((resolve, reject) => {

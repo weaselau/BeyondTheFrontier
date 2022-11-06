@@ -1,7 +1,7 @@
 import * as Discord from 'discord.js'
-import Client from '.'
+import { _client } from '.'
 
-var channel: Discord.TextChannel | undefined
+var channel = _client.channels.cache.get('1038753283898097765')
 
 
 
@@ -12,13 +12,8 @@ var channel: Discord.TextChannel | undefined
 
 
 export function onMemberLeave(member: Discord.GuildMember | Discord.PartialGuildMember) {
-    if (!channel) {
-        Client().then(_client => {
-            let _channel = _client.channels.cache.get('1038753283898097765')
-            if (_channel?.type !== Discord.ChannelType.GuildText) return
-            channel = _channel
-        })
-    }
+    if(channel?.type !== Discord.ChannelType.GuildText) return;
+
     channel?.send({
         embeds: [
             new Discord.EmbedBuilder()
@@ -38,13 +33,7 @@ export function onMemberLeave(member: Discord.GuildMember | Discord.PartialGuild
 
 
 export function onMemberJoin(member: Discord.GuildMember | Discord.PartialGuildMember) {
-    if (!channel) {
-        Client().then(_client => {
-            let _channel = _client.channels.cache.get('1038753283898097765')
-            if (_channel?.type !== Discord.ChannelType.GuildText) return
-            channel = _channel
-        })
-    }
+    if(channel?.type !== Discord.ChannelType.GuildText) return;
 
     channel?.send({
         embeds: [
