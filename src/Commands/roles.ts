@@ -31,6 +31,12 @@ export default async (interaction: ChatInputCommandInteraction<CacheType>) => {
 
 
     if (SubCommand == 'add') Member?.roles.add(Role)
+        .then(() => interaction.reply({ content: `Added ${Role} to your user!`, ephemeral: true }))
+        .catch(() => interaction.reply({ content: 'Failed to add Role!', ephemeral: true }))
+
+
     if (SubCommand == 'remove') Member?.roles.remove(Role)
+        .then(() => interaction.reply({ content: `Removed ${Role} from your user!`, ephemeral: true }))
+        .catch(() => interaction.reply({ content: 'Failed to remove Role!', ephemeral: true }))
 
 }
