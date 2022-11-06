@@ -9,6 +9,8 @@ import GlobalCommands from '@lib/discord/commands'
 
 import * as _commands from '../../Commands'
 
+import * as Events from '@lib/discord/events'
+
 
 
 //? Client
@@ -51,6 +53,10 @@ export default function Client(): Promise<Discord.Client> {
                 })
 
             })
+
+            _client.on('guildMemberAdd', (member) => Events.onMemberJoin(member))
+            _client.on('guildMemberRemove', (member) => Events.onMemberLeave(member))
+
         } else resolve(_client)
 
     })
