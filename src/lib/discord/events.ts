@@ -1,5 +1,5 @@
 import * as Discord from 'discord.js'
-import { _client } from '.'
+import { Guild, _client } from '.'
 
 
 

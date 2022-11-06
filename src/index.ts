@@ -1,6 +1,6 @@
 //? Dependencies
 
-import { Message, EmbedBuilder, resolveColor } from 'discord.js'
+import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js'
 
 import Client, { Channel } from "@lib/discord"
 import Query from "@lib/gamedig"
@@ -8,6 +8,16 @@ import Query from "@lib/gamedig"
 
 
 //? Client
+
+
+Client()
+    .then(client => {
+        RulesMenu()
+        setInterval(() => {
+            RulesMenu()
+        }, 1000 * 60 * 30)
+    })
+
 
 Client()
     .then(client => {
@@ -18,6 +28,19 @@ Client()
             Minecraft()
         }, 1000 * 60 * 3)
     })
+
+
+//? Rules
+
+async function RulesMenu() {
+    const _channel = await Channel('1038755570154479626', '1038755570154479626')
+    const _message: Message = _channel.messages.cache.get('1038821463714709555') || await _channel.messages.fetch('1038821463714709555')
+
+    if (!_message) return console.log('Role Meny Message could not be found!')
+
+    //? need to make embed with Building and sending select menus ( give roles )
+    
+}
 
 
 
