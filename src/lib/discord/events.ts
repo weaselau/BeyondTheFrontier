@@ -16,7 +16,7 @@ export function onMemberLeave(member: Discord.GuildMember | Discord.PartialGuild
     channel?.send({
         embeds: [
             new Discord.EmbedBuilder()
-                .setTitle(channel.guild.name + 'is sad to see you go')
+                .setTitle(channel.guild.name + ' is sad to see you go')
                 .setDescription(member.displayName + ' has left the server')
                 .setColor('Red')
         ]
