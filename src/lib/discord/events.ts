@@ -39,7 +39,7 @@ export function onMemberJoin(member: Discord.GuildMember | Discord.PartialGuildM
         embeds: [
             new Discord.EmbedBuilder()
                 .setTitle('Welcome To ' + channel.guild.name)
-                .setDescription('Please Welcome ' + member.displayName + 'to the server! Please check out <#1025250729717411870>')
+                .setDescription('Please Welcome ' + member.displayName + ' to the server! Please check out <#1025250729717411870>')
                 .setColor('Green')
         ]
     })
