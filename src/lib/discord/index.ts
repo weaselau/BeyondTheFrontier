@@ -39,8 +39,8 @@ export default function Client(): Promise<Discord.Client> {
 
                 //? Register Global Commands
                 _client.application?.commands.set(GlobalCommands)
-                .then(() => console.log(`${GlobalCommands.length}x Slash Commands Successfully Reloaded`))
-                
+                    .then(() => console.log(`${GlobalCommands.length}x Slash Commands Successfully Reloaded`))
+
 
                 //? Interaction Handler
                 const Commands: any = _commands
