@@ -1,8 +1,6 @@
 import * as Discord from 'discord.js'
 import { _client } from '.'
 
-var channel = _client.channels.cache.get('1038753283898097765')
-
 
 
 //?
@@ -12,6 +10,7 @@ var channel = _client.channels.cache.get('1038753283898097765')
 
 
 export function onMemberLeave(member: Discord.GuildMember | Discord.PartialGuildMember) {
+    let channel = _client?.channels.cache.get('1038753283898097765')
     if(channel?.type !== Discord.ChannelType.GuildText) return;
 
     channel?.send({
@@ -33,6 +32,7 @@ export function onMemberLeave(member: Discord.GuildMember | Discord.PartialGuild
 
 
 export function onMemberJoin(member: Discord.GuildMember | Discord.PartialGuildMember) {
+    let channel = _client?.channels.cache.get('1038753283898097765')
     if(channel?.type !== Discord.ChannelType.GuildText) return;
 
     channel?.send({
