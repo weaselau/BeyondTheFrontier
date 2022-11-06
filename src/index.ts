@@ -1,6 +1,6 @@
 //? Dependencies
 
-import { Message, EmbedBuilder, resolveColor } from 'discord.js'
+import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, ButtonStyle, SelectMenuBuilder } from 'discord.js'
 
 import Client, { Channel } from "@lib/discord"
 import Query from "@lib/gamedig"
@@ -11,13 +11,63 @@ import Query from "@lib/gamedig"
 
 Client()
     .then(client => {
+        RulesMenu()
         ProjectZomboid()
         Minecraft()
+
+        //? 30 minute update time
+        setInterval(() => {
+            RulesMenu()
+        }, 1000 * 60 * 30)
+
+        //? 3 minute update time
         setInterval(() => {
             ProjectZomboid()
             Minecraft()
         }, 1000 * 60 * 3)
     })
+
+
+//? Rules
+
+async function RulesMenu() {
+    const _channel = await Channel('1038755570154479626', '1038755570154479626')
+    const _message: Message = _channel.messages.cache.get('1038821463714709555') || await _channel.messages.fetch('1038821463714709555')
+
+    if (!_message) return console.log('Role Meny Message could not be found!')
+
+
+
+    //? Interation Select Menu  
+
+
+    const row = new ActionRowBuilder()
+        .addComponents(
+
+    )
+
+
+    //? Role Menu Itself
+
+
+    _message.edit({
+        embeds: [
+            new EmbedBuilder()
+                .setTitle('Role Menu')
+        ]
+    })
+        .catch(() => {
+            _message.edit({
+                embeds: [
+                    new EmbedBuilder()
+                        .setTitle('Role Menu')
+                        .setColor(resolveColor('#db2525'))
+                        .setDescription('>>> The Role Menu is Offline...')
+                        .setTimestamp(new Date())
+                ]
+            })
+        })
+}
 
 
 

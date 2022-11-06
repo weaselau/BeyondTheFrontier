@@ -1,5 +1,5 @@
 import * as Discord from 'discord.js'
-import { _client } from '.'
+import { Guild, _client } from '.'
 
 
 
@@ -11,7 +11,7 @@ import { _client } from '.'
 
 export function onMemberLeave(member: Discord.GuildMember | Discord.PartialGuildMember) {
     let channel = _client?.channels.cache.get('1038753283898097765')
-    if(channel?.type !== Discord.ChannelType.GuildText) return;
+    if (channel?.type !== Discord.ChannelType.GuildText) return;
 
     channel?.send({
         embeds: [
@@ -33,7 +33,7 @@ export function onMemberLeave(member: Discord.GuildMember | Discord.PartialGuild
 
 export function onMemberJoin(member: Discord.GuildMember | Discord.PartialGuildMember) {
     let channel = _client?.channels.cache.get('1038753283898097765')
-    if(channel?.type !== Discord.ChannelType.GuildText) return;
+    if (channel?.type !== Discord.ChannelType.GuildText) return;
 
     channel?.send({
         embeds: [

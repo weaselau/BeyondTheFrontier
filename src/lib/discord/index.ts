@@ -4,7 +4,7 @@ import Config from '@lib/config'
 import * as Discord from "discord.js"
 
 
-import { PushCommands } from "@lib/discord/register"
+
 import GlobalCommands from '@lib/discord/commands'
 
 import * as _commands from '../../Commands'
@@ -38,8 +38,9 @@ export default function Client(): Promise<Discord.Client> {
 
 
                 //? Register Global Commands
-                PushCommands(GlobalCommands)
-                
+                _client.application?.commands.set(GlobalCommands)
+                    .then(() => console.log(`${GlobalCommands.length}x Slash Commands Successfully Reloaded`))
+
 
                 //? Interaction Handler
                 const Commands: any = _commands
