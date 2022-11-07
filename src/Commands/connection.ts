@@ -30,7 +30,7 @@ export default (interaction: ChatInputCommandInteraction<CacheType>) => {
                     },
                     {
                         name: 'Subject to change',
-                        value: '**all the rules seen will can be subject to change**',
+                        value: '**All the rules seen will can be subject to change, please keep this in mind if you have any feed back can you please send it to <#1039148738628825098> threw a Support Ticket, just please state why you have opended the ticket.**',
                         inline: false,
                     },
                     {

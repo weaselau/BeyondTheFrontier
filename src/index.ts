@@ -21,6 +21,13 @@ Client()
 
 
 
+        //? 12 Hour update time
+        setInterval(() => {
+
+        }, 1000 * 60 * 720)
+
+
+
         //? 60 minute update time
         setInterval(() => {
             RolesMenu()
