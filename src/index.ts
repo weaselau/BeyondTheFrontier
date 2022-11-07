@@ -43,7 +43,8 @@ async function RolesMenu() {
     
     const Roles: any = {
         project_zomboid: 'Project zomboid',
-        minecraft: 'Minecraft'
+        minecraft: 'Minecraft',
+        rust: 'Rust'
     }
     
 
@@ -74,9 +75,9 @@ async function RolesMenu() {
                         value: 'Sandbox Building Game',                    
                     },
                     {
-                        label: 'test1',
-                        description: 'test1',
-                        value: 'test1',                       
+                        label: 'Rust',
+                        description: 'Rust Game Role',
+                        value: 'Survival PvP Game',                       
                     },
                     {
                         label: 'test2',
