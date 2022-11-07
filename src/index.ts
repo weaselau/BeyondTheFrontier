@@ -53,19 +53,19 @@ async function RolesMenu() {
                 .setPlaceholder('Nothing Selected')
                 .setOptions([
                     {
-                        label: 'Porject Zomboid',
-                        description: 'Porject Zomboid Game Role',
-                        value: 'a',     
+                        label: 'Project Zomboid',
+                        description: 'Project Zomboid Game Role',
+                        value: 'pz',     
                     },
                     {
                         label: 'Minecraft',
                         description: 'Minecraft Game Role',
-                        value: 'b',                    
+                        value: 'mc',                    
                     },
                     {
                         label: 'Rust',
                         description: 'Rust Game Role',
-                        value: 'c',                       
+                        value: 'rt',                       
                     },
                     {
                         label: 'test2',

@@ -70,16 +70,25 @@ export function InteractionSelectMenu(interaction: Discord.SelectMenuInteraction
     }
 
     if(interaction.customId === 'select') {
-        interaction.values.forEach(element => {
             let guild = _client.guilds.cache.get(Config.discord.guild)
-            let Member = guild?.members.cache.get(interaction.user.id)
-
-            let role = guild?.roles.cache.get(element)
-            if(!role) return
-            Member?.roles.add(Member?.roles.resolve(role))
-            
+            if(!guild) return
+            let Member = guild.members.cache.get(interaction.user.id)
 
 
-        });
+
+            let pzrole = guild.roles.cache.find(role => role.name === 'Project zomboid'); if(!pzrole) return;
+            if (interaction.values.includes('pz')) Member?.roles.add(pzrole)
+
+
+
+            let mcrole = guild.roles.cache.find(role => role.name === 'Minecraft'); if(!mcrole) return;
+            if (interaction.values.includes('mc')) Member?.roles.add(mcrole)
+
+
+
+            let rtrole = guild.roles.cache.find(role => role.name === 'Rust'); if(!rtrole) return;
+            if (interaction.values.includes('rt')) Member?.roles.add(rtrole)
+
+        interaction.reply({ephemeral: true, content: 'Role/s added succsessfully', })
     }
 }
