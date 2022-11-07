@@ -17,11 +17,17 @@ Client()
         RolesMenu()
         ProjectZomboid()
         Minecraft()
+        SupportChannel()
+
+
 
         //? 30 minute update time
         setInterval(() => {
             RolesMenu()
-        }, 1000 * 60 * 720)
+            SupportChannel()
+        }, 1000 * 60 * 60)
+
+
 
         //? 3 minute update time
         setInterval(() => {
@@ -31,7 +37,52 @@ Client()
     })
 
 
+//?
+//? Support Channel
+//?
+
+
+async function SupportChannel() {
+
+    const _channel = await Channel(Config.discord.guild, '1039148738628825098')
+    const _message: Message = _channel.messages.cache.get('1039148951305199676') || await _channel.messages.fetch('1039148951305199676')
+
+    if (!_message) return console.log('Support Channel Message could not be found!')
+
+    //? Button Menu
+
+
+
+    //? Support Embed 
+
+    _message.edit({
+        embeds: [
+            new EmbedBuilder()
+                .setTitle('Support Channel')
+                .setDescription('Support Channel')
+        ], components: [
+
+        ]
+
+    })
+        .catch(() => {
+            _message.edit({
+                embeds: [
+                    new EmbedBuilder()
+                        .setTitle('Support Channel')
+                        .setColor(resolveColor('#db2525'))
+                        .setDescription('>>> The Support Channel is Offline...')
+                        .setTimestamp(new Date())
+                ]
+            })
+        })
+}
+
+
+
+//?
 //? Roles
+//?
 
 
 
@@ -40,7 +91,7 @@ async function RolesMenu() {
     const _channel = await Channel(Config.discord.guild, '1038755570154479626')
     const _message: Message = _channel.messages.cache.get('1038821463714709555') || await _channel.messages.fetch('1038821463714709555')
 
-    if (!_message) return console.log('Role Meny Message could not be found!')
+    if (!_message) return console.log('Role Menu Message could not be found!')
 
 
     //? Interation Select Menu  
@@ -55,22 +106,22 @@ async function RolesMenu() {
                     {
                         label: 'Project Zomboid',
                         description: 'Project Zomboid Game Role',
-                        value: 'pz',     
+                        value: 'pz',
                     },
                     {
                         label: 'Minecraft',
                         description: 'Minecraft Game Role',
-                        value: 'mc',                    
+                        value: 'mc',
                     },
                     {
                         label: 'Rust',
                         description: 'Rust Game Role',
-                        value: 'rt',                       
+                        value: 'rt',
                     },
                     {
                         label: 'test2',
                         description: 'test2',
-                        value: 'd', 
+                        value: 'd',
                     },
                     {
                         label: 'test3',
