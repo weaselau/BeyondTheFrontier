@@ -53,32 +53,27 @@ async function RolesMenu() {
                     {
                         label: 'Porject Zomboid',
                         description: 'Porject Zomboid Game Role',
-                        value: 'Zomboid Survival Game',
-                        default: false
+                        value: 'Zomboid Survival Game',                     
                     },
                     {
                         label: 'Minecraft',
                         description: 'Minecraft Game Role',
-                        value: 'Sandbox Building Game',
-                        default: false
+                        value: 'Sandbox Building Game',                    
+                    },
+                    {
+                        label: 'You can select me too',
+                        description: 'This is a decreption',
+                        value: 'second_option',                       
+                    },
+                    {
+                        label: 'You can select me too',
+                        description: 'This is a decreption',
+                        value: 'second_option', 
                     },
                     {
                         label: 'You can select me too',
                         description: 'This is a decreption',
                         value: 'second_option',
-                        default: false
-                    },
-                    {
-                        label: 'You can select me too',
-                        description: 'This is a decreption',
-                        value: 'second_option',
-                        default: false
-                    },
-                    {
-                        label: 'You can select me too',
-                        description: 'This is a decreption',
-                        value: 'second_option',
-                        default: false
                     },
                 ),
         )
@@ -92,7 +87,6 @@ async function RolesMenu() {
             new EmbedBuilder()
                 .setTitle('Role Menu')
                 .setDescription('Role menu')
-                .setImage('')
         ], components: [
             row
         ]
