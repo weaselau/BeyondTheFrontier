@@ -14,13 +14,13 @@ import { embed } from 'Commands'
 
 Client()
     .then(client => {
-        RulesMenu()
+        RolesMenu()
         ProjectZomboid()
         Minecraft()
 
         //? 30 minute update time
         setInterval(() => {
-            RulesMenu()
+            RolesMenu()
         }, 1000 * 60 * 30)
 
         //? 3 minute update time
@@ -31,9 +31,9 @@ Client()
     })
 
 
-//? Rules
+//? Roles
 
-async function RulesMenu() {
+async function RolesMenu() {
 
     const _channel = await Channel(Config.guild, '1038755570154479626')
     const _message: Message = _channel.messages.cache.get('1038821463714709555') || await _channel.messages.fetch('1038821463714709555')
