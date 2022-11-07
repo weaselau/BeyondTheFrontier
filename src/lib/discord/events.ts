@@ -1,7 +1,6 @@
 import * as Discord from 'discord.js'
 import { Guild, _client } from '.'
 import Client from '@lib/discord'
-import { roles } from 'Commands';
 import { MembershipScreeningFieldType, TeamMemberMembershipState } from 'discord.js';
 
 import Config from '@lib/config'
