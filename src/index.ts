@@ -21,7 +21,7 @@ Client()
         //? 30 minute update time
         setInterval(() => {
             RolesMenu()
-        }, 1000 * 60 * 30)
+        }, 1000 * 60 * 600)
 
         //? 3 minute update time
         setInterval(() => {
@@ -35,7 +35,7 @@ Client()
 
 async function RolesMenu() {
 
-    const _channel = await Channel(Config.guild, '1038755570154479626')
+    const _channel = await Channel(Config.discord.guild, '1038755570154479626')
     const _message: Message = _channel.messages.cache.get('1038821463714709555') || await _channel.messages.fetch('1038821463714709555')
 
     if (!_message) return console.log('Role Meny Message could not be found!')
@@ -51,14 +51,34 @@ async function RolesMenu() {
                 .setPlaceholder('Nothing Selected')
                 .setOptions(
                     {
-                        label: 'Select me',
-                        description: 'This is a decreption',
-                        value: 'First_option',
+                        label: 'Porject Zomboid',
+                        description: 'Porject Zomboid Game Role',
+                        value: 'Zomboid Survival Game',
+                        default: false
+                    },
+                    {
+                        label: 'Minecraft',
+                        description: 'Minecraft Game Role',
+                        value: 'Sandbox Building Game',
+                        default: false
                     },
                     {
                         label: 'You can select me too',
                         description: 'This is a decreption',
                         value: 'second_option',
+                        default: false
+                    },
+                    {
+                        label: 'You can select me too',
+                        description: 'This is a decreption',
+                        value: 'second_option',
+                        default: false
+                    },
+                    {
+                        label: 'You can select me too',
+                        description: 'This is a decreption',
+                        value: 'second_option',
+                        default: false
                     },
                 ),
         )
@@ -72,7 +92,7 @@ async function RolesMenu() {
             new EmbedBuilder()
                 .setTitle('Role Menu')
                 .setDescription('Role menu')
-
+                .setImage('')
         ], components: [
             row
         ]
@@ -99,7 +119,7 @@ async function RolesMenu() {
 
 async function ProjectZomboid() {
 
-    const _channel = await Channel(Config.guild, '1030539047996751903')
+    const _channel = await Channel(Config.discord.guild, '1030539047996751903')
     const _message: Message = _channel.messages.cache.get('1031237192602898443') || await _channel.messages.fetch('1031237192602898443')
 
     if (!_message) return console.log('Project Zomboid Message could not be found!')
@@ -153,7 +173,7 @@ async function ProjectZomboid() {
 
 
 async function Minecraft() {
-    const _channel = await Channel(Config.guild, '1030539047996751903')
+    const _channel = await Channel(Config.discord.guild, '1030539047996751903')
     const _message: Message = _channel.messages.cache.get('1031799098803769364') || await _channel.messages.fetch('1031799098803769364')
 
     if (!_message) return console.log('Minecraft Message could not be found!')

@@ -10,8 +10,8 @@ interface Model {
     discord: {
         id: string
         token: string
+        guild: string
     }
-    guild: string
 }
 
 
