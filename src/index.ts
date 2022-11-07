@@ -37,7 +37,10 @@ Client()
 
 async function RolesMenu() {
 
+    //? need someone to set up givving roles!
 
+
+    
     const Roles: any = {
         project_zomboid: 'Project zomboid',
         minecraft: 'Minecraft'
