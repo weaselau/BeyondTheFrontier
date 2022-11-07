@@ -51,33 +51,33 @@ async function RolesMenu() {
             new SelectMenuBuilder()
                 .setCustomId('select')
                 .setPlaceholder('Nothing Selected')
-                .setOptions(
+                .setOptions([
                     {
                         label: 'Porject Zomboid',
                         description: 'Porject Zomboid Game Role',
-                        value: 'A',                     
+                        value: 'a',     
                     },
                     {
                         label: 'Minecraft',
                         description: 'Minecraft Game Role',
-                        value: 'B',                    
+                        value: 'b',                    
                     },
                     {
                         label: 'Rust',
                         description: 'Rust Game Role',
-                        value: 'C',                       
+                        value: 'c',                       
                     },
                     {
                         label: 'test2',
                         description: 'test2',
-                        value: 'D', 
+                        value: 'd', 
                     },
                     {
                         label: 'test3',
                         description: 'test3',
-                        value: 'E',
+                        value: 'e',
                     },
-                ),
+                ]),
         )
 
 

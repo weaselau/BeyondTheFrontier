@@ -64,9 +64,9 @@ export function onMemberJoin(member: Discord.GuildMember | Discord.PartialGuildM
 
 export function InteractionSelectMenu(interaction: Discord.SelectMenuInteraction) {
     const Roles: any = {
-        'A': 'Project zomboid',
-        'B': 'Minecraft',
-        'C': 'Rust'
+        'a': 'Project zomboid',
+        'b': 'Minecraft',
+        'c': 'Rust'
     }
 
     if(interaction.customId === 'select') {
