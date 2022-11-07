@@ -6,6 +6,9 @@ export const Collections: {
 } = {}
 
 export async function connect() {
+
+    console.log('Mongo Database Connecting')
+
     const client: Mongo.MongoClient = new Mongo.MongoClient(Config.default.discord.mongourl)
     await client.connect()
 
