@@ -73,8 +73,6 @@ const Commands = [
                 .setChoices(...RoleChoices)
             )
         )
-
-
 ]
 
 export default Commands

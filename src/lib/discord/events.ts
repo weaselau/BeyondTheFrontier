@@ -1,6 +1,11 @@
 import * as Discord from 'discord.js'
 import { Guild, _client } from '.'
 import Client from '@lib/discord'
+import { roles } from 'Commands';
+import { MembershipScreeningFieldType, TeamMemberMembershipState } from 'discord.js';
+
+import Config from '@lib/config'
+
 //?
 //? Leave
 //?
@@ -58,7 +63,25 @@ export function onMemberJoin(member: Discord.GuildMember | Discord.PartialGuildM
 
 
 export function InteractionSelectMenu(interaction: Discord.SelectMenuInteraction) {
+    const Roles: any = {
+        1: 'Project zomboid',
+        2: 'Minecraft',
+        3: 'Rust'
+    }
 
-    
+    if(interaction.customId === 'select') {
+        interaction.values.forEach(element => {
+            let guild = _client.guilds.cache.get(Config.discord.guild)
+            let Member = guild?.members.cache.get(interaction.user.id)
 
+            let role = guild?.roles.cache.get('1014218871667961866')
+            if(!role) return
+            role = Member?.roles.resolve(role)
+
+            Member?.roles.add(role)
+            
+
+
+        });
+    }
 }

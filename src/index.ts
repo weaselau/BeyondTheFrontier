@@ -37,18 +37,6 @@ Client()
 
 async function RolesMenu() {
 
-    //? need someone to set up givving roles!
-
-
-    
-    const Roles: any = {
-        project_zomboid: 'Project zomboid',
-        minecraft: 'Minecraft',
-        rust: 'Rust'
-    }
-    
-
-
     const _channel = await Channel(Config.discord.guild, '1038755570154479626')
     const _message: Message = _channel.messages.cache.get('1038821463714709555') || await _channel.messages.fetch('1038821463714709555')
 
@@ -67,17 +55,17 @@ async function RolesMenu() {
                     {
                         label: 'Porject Zomboid',
                         description: 'Porject Zomboid Game Role',
-                        value: 'Zomboid Survival Game',                     
+                        value: '1',                     
                     },
                     {
                         label: 'Minecraft',
                         description: 'Minecraft Game Role',
-                        value: 'Sandbox Building Game',                    
+                        value: '2',                    
                     },
                     {
                         label: 'Rust',
                         description: 'Rust Game Role',
-                        value: 'Survival PvP Game',                       
+                        value: '3',                       
                     },
                     {
                         label: 'test2',
