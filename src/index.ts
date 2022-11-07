@@ -41,7 +41,6 @@ async function RolesMenu() {
     if (!_message) return console.log('Role Meny Message could not be found!')
 
 
-
     //? Interation Select Menu  
 
 
@@ -75,7 +74,7 @@ async function RolesMenu() {
                 .setDescription('Role menu')
 
         ], components: [
-            row 
+            row
         ]
 
     })
