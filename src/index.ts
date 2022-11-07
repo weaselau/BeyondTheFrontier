@@ -21,7 +21,7 @@ Client()
         //? 30 minute update time
         setInterval(() => {
             RolesMenu()
-        }, 1000 * 60 * 600)
+        }, 1000 * 60 * 720)
 
         //? 3 minute update time
         setInterval(() => {
@@ -55,27 +55,27 @@ async function RolesMenu() {
                     {
                         label: 'Porject Zomboid',
                         description: 'Porject Zomboid Game Role',
-                        value: '1',                     
+                        value: 'A',                     
                     },
                     {
                         label: 'Minecraft',
                         description: 'Minecraft Game Role',
-                        value: '2',                    
+                        value: 'B',                    
                     },
                     {
                         label: 'Rust',
                         description: 'Rust Game Role',
-                        value: '3',                       
+                        value: 'C',                       
                     },
                     {
                         label: 'test2',
                         description: 'test2',
-                        value: 'test2', 
+                        value: 'D', 
                     },
                     {
                         label: 'test3',
                         description: 'test3',
-                        value: 'test3',
+                        value: 'E',
                     },
                 ),
         )

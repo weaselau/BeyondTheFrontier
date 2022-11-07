@@ -64,9 +64,9 @@ export function onMemberJoin(member: Discord.GuildMember | Discord.PartialGuildM
 
 export function InteractionSelectMenu(interaction: Discord.SelectMenuInteraction) {
     const Roles: any = {
-        1: 'Project zomboid',
-        2: 'Minecraft',
-        3: 'Rust'
+        'A': 'Project zomboid',
+        'B': 'Minecraft',
+        'C': 'Rust'
     }
 
     if(interaction.customId === 'select') {
@@ -74,11 +74,9 @@ export function InteractionSelectMenu(interaction: Discord.SelectMenuInteraction
             let guild = _client.guilds.cache.get(Config.discord.guild)
             let Member = guild?.members.cache.get(interaction.user.id)
 
-            let role = guild?.roles.cache.get('1014218871667961866')
+            let role = guild?.roles.cache.get(element)
             if(!role) return
-            role = Member?.roles.resolve(role)
-
-            Member?.roles.add(role)
+            Member?.roles.add(Member?.roles.resolve(role))
             
 
 
