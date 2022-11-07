@@ -1,9 +1,10 @@
 //? Dependencies
 
-import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, ButtonStyle, SelectMenuBuilder } from 'discord.js'
+import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, ButtonStyle, SelectMenuBuilder, InteractionCollector } from 'discord.js'
 
 import Client, { Channel } from "@lib/discord"
 import Query from "@lib/gamedig"
+import { embed } from 'Commands'
 
 
 
@@ -31,7 +32,7 @@ Client()
 //? Rules
 
 async function RulesMenu() {
-    const _channel = await Channel('1038755570154479626', '1038755570154479626')
+    const _channel = await Channel('1038755570154479626', '1030539047996751903')
     const _message: Message = _channel.messages.cache.get('1038821463714709555') || await _channel.messages.fetch('1038821463714709555')
 
     if (!_message) return console.log('Role Meny Message could not be found!')
@@ -41,10 +42,24 @@ async function RulesMenu() {
     //? Interation Select Menu  
 
 
-    const row = new ActionRowBuilder()
+    const row = new ActionRowBuilder<SelectMenuBuilder>()
         .addComponents(
-
-    )
+            new SelectMenuBuilder()
+                .setCustomId('select')
+                .setPlaceholder('Nothing Selected')
+                .setOptions(
+                    {
+                        label: 'Select me',
+                        description: 'This is a decreption',
+                        value: 'First_option',
+                    },
+                    {
+                        label: 'You can select me too',
+                        description: 'This is a decreption',
+                        value: 'second_option',
+                    },
+                ),
+        )
 
 
     //? Role Menu Itself
@@ -54,7 +69,12 @@ async function RulesMenu() {
         embeds: [
             new EmbedBuilder()
                 .setTitle('Role Menu')
+                .setDescription('Role menu')
+
+        ], components: [
+            row 
         ]
+
     })
         .catch(() => {
             _message.edit({

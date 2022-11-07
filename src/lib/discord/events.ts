@@ -1,10 +1,21 @@
 import * as Discord from 'discord.js'
 import { Guild, _client } from '.'
+import  Client  from '@lib/discord'
 
 
 
 //?
-//?Leave
+//? Member Role on Join
+//?
+
+
+
+
+
+
+
+//?
+//? Leave
 //?
 
 

@@ -23,9 +23,18 @@ export default function Client(): Promise<Discord.Client> {
         if (!_client?.isReady()) {
             _client = new Discord.Client({
                 intents: [
-                    Discord.GatewayIntentBits.Guilds,
+                    Discord.GatewayIntentBits.GuildBans,
+                    Discord.GatewayIntentBits.GuildEmojisAndStickers,
                     Discord.GatewayIntentBits.GuildMembers,
-                    Discord.GatewayIntentBits.GuildMessages
+                    Discord.GatewayIntentBits.GuildMessageReactions,
+                    Discord.GatewayIntentBits.GuildMessages,
+                    Discord.GatewayIntentBits.GuildPresences,
+                    Discord.GatewayIntentBits.Guilds,
+                    Discord.GatewayIntentBits.MessageContent,
+                    Discord.GatewayIntentBits.DirectMessages,
+                    Discord.GatewayIntentBits.GuildInvites,
+                    Discord.GatewayIntentBits.GuildIntegrations,
+                    Discord.GatewayIntentBits.GuildVoiceStates
                 ]
             })
 
@@ -35,7 +44,6 @@ export default function Client(): Promise<Discord.Client> {
                 console.log(`Logged in as ${_client.user?.tag || '"Unknown"'}`)
                 if (_client.user) resolve(_client)
                 else reject('Client is not ready!')
-
 
                 //? Register Global Commands
                 _client.application?.commands.set(GlobalCommands)
