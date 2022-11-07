@@ -6,6 +6,8 @@ import { MembershipScreeningFieldType, TeamMemberMembershipState } from 'discord
 
 import Config from '@lib/config'
 
+
+
 //?
 //? Leave
 //?
@@ -69,7 +71,7 @@ export function InteractionSelectMenu(interaction: Discord.SelectMenuInteraction
             let Member = guild.members.cache.get(interaction.user.id)
 
 
-            
+
             let pzrole = guild.roles.cache.find(role => role.name === 'Project zomboid'); if(!pzrole) return;
             if (interaction.values.includes('pz')) Member?.roles.add(pzrole)
 

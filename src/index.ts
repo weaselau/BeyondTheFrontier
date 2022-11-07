@@ -2,7 +2,7 @@
 
 import Config from '@lib/config'
 
-import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, ButtonStyle, SelectMenuBuilder, InteractionCollector, ChatInputCommandInteraction, CacheType } from 'discord.js'
+import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, ButtonStyle, SelectMenuBuilder, InteractionCollector, ChatInputCommandInteraction, CacheType, AnyComponentBuilder } from 'discord.js'
 
 import Client, { Channel } from "@lib/discord"
 import Query from "@lib/gamedig"
@@ -21,7 +21,7 @@ Client()
 
 
 
-        //? 30 minute update time
+        //? 60 minute update time
         setInterval(() => {
             RolesMenu()
             SupportChannel()
@@ -49,8 +49,17 @@ async function SupportChannel() {
 
     if (!_message) return console.log('Support Channel Message could not be found!')
 
+
     //? Button Menu
 
+
+    const button = new ActionRowBuilder<ButtonBuilder>()
+        .addComponents([
+            new ButtonBuilder()
+                .setCustomId('Primary')
+                .setLabel('Support Ticket')
+                .setStyle(ButtonStyle.Success)
+        ])
 
 
     //? Support Embed 
@@ -58,11 +67,10 @@ async function SupportChannel() {
     _message.edit({
         embeds: [
             new EmbedBuilder()
-                .setTitle('Support Channel')
-                .setDescription('Support Channel')
-        ], components: [
-
-        ]
+                .setTitle('**Server Support Channel**')
+                .setDescription('>>> Need Help? Our staff are here to support you and the problems you are facing. \n\n test')
+                .setTimestamp(new Date())
+        ], components: [button]
 
     })
         .catch(() => {
@@ -138,11 +146,10 @@ async function RolesMenu() {
     _message.edit({
         embeds: [
             new EmbedBuilder()
-                .setTitle('Role Menu')
-                .setDescription('Role menu')
-        ], components: [
-            row
-        ]
+                .setTitle('**Role Menu**')
+                .setDescription('>>> What Games do you play?')
+                .setTimestamp(new Date())
+        ], components: [row]
 
     })
         .catch(() => {
@@ -159,11 +166,13 @@ async function RolesMenu() {
 }
 
 
-
+//?
 //? Gamedig
+//?
 
-
-
+//?
+//? ProjectZomboid
+//?
 async function ProjectZomboid() {
 
     const _channel = await Channel(Config.discord.guild, '1030539047996751903')
@@ -218,7 +227,9 @@ async function ProjectZomboid() {
 }
 
 
-
+//?
+//? Minecraft
+//?
 async function Minecraft() {
     const _channel = await Channel(Config.discord.guild, '1030539047996751903')
     const _message: Message = _channel.messages.cache.get('1031799098803769364') || await _channel.messages.fetch('1031799098803769364')
