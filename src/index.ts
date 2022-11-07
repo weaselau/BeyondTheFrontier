@@ -1,5 +1,7 @@
 //? Dependencies
 
+import Config from '@lib/config'
+
 import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, ButtonStyle, SelectMenuBuilder, InteractionCollector } from 'discord.js'
 
 import Client, { Channel } from "@lib/discord"
@@ -32,7 +34,8 @@ Client()
 //? Rules
 
 async function RulesMenu() {
-    const _channel = await Channel('1038755570154479626', '1030539047996751903')
+
+    const _channel = await Channel(Config.guild, '1038755570154479626')
     const _message: Message = _channel.messages.cache.get('1038821463714709555') || await _channel.messages.fetch('1038821463714709555')
 
     if (!_message) return console.log('Role Meny Message could not be found!')
@@ -97,7 +100,7 @@ async function RulesMenu() {
 
 async function ProjectZomboid() {
 
-    const _channel = await Channel('614680459728650250', '1030539047996751903')
+    const _channel = await Channel(Config.guild, '1030539047996751903')
     const _message: Message = _channel.messages.cache.get('1031237192602898443') || await _channel.messages.fetch('1031237192602898443')
 
     if (!_message) return console.log('Project Zomboid Message could not be found!')
@@ -151,7 +154,7 @@ async function ProjectZomboid() {
 
 
 async function Minecraft() {
-    const _channel = await Channel('614680459728650250', '1030539047996751903')
+    const _channel = await Channel(Config.guild, '1030539047996751903')
     const _message: Message = _channel.messages.cache.get('1031799098803769364') || await _channel.messages.fetch('1031799098803769364')
 
     if (!_message) return console.log('Minecraft Message could not be found!')
