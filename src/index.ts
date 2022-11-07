@@ -18,30 +18,99 @@ Client()
         ProjectZomboid()
         Minecraft()
         SupportChannel()
+        RulesMenu()
+        InfomationMenu()
 
 
-
+        //?
         //? 12 Hour update time
-        setInterval(() => {
+        //?
 
+        setInterval(() => {
+            RulesMenu()
+            InfomationMenu()
         }, 1000 * 60 * 720)
 
 
-
+        //?
         //? 60 minute update time
+        //?
+
         setInterval(() => {
             RolesMenu()
             SupportChannel()
         }, 1000 * 60 * 60)
 
 
-
+        //?
         //? 3 minute update time
+        //?
+
         setInterval(() => {
             ProjectZomboid()
             Minecraft()
         }, 1000 * 60 * 3)
     })
+
+
+//?
+//? Rules and Infomation Menu
+//?
+
+async function RulesMenu() {
+    const _channel = await Channel(Config.discord.guild, '1025250729717411870')
+    const _message: Message = _channel.messages.cache.get('1039163153612816415') || await _channel.messages.fetch('1039163153612816415')
+
+    if (!_message) return console.log('Rules Menu Message could not be found!')
+    _message.edit({
+        embeds: [
+            new EmbedBuilder()
+                .setTitle('**Rules Menu**')
+                .setDescription('>>> Rules Menu')
+                .setTimestamp(new Date())
+        ]
+    })
+        .catch(() => {
+            _message.edit({
+                embeds: [
+                    new EmbedBuilder()
+                        .setTitle('Rules Menu')
+                        .setColor(resolveColor('#db2525'))
+                        .setDescription('>>> The Rules Menu is Offline...')
+                        .setTimestamp(new Date())
+                ]
+            })
+        })
+}
+
+
+
+async function InfomationMenu() {
+    const _channel = await Channel(Config.discord.guild, '1025250729717411870')
+    const _message: Message = _channel.messages.cache.get('1039163167378513970') || await _channel.messages.fetch('1039163167378513970')
+
+    if (!_message) return console.log('Infomation Menu Message could not be found!')
+    _message.edit({
+        embeds: [
+            new EmbedBuilder()
+                .setTitle('**Infomation Menu**')
+                .setDescription('>>> Infomation Menu')
+                .setTimestamp(new Date())
+        ]
+    })
+        .catch(() => {
+            _message.edit({
+                embeds: [
+                    new EmbedBuilder()
+                        .setTitle('Infomation Menu')
+                        .setColor(resolveColor('#db2525'))
+                        .setDescription('>>> The Infomation Menu is Offline...')
+                        .setTimestamp(new Date())
+                ]
+            })
+        })
+}
+
 
 
 //?
