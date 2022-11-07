@@ -2,7 +2,7 @@
 
 import Config from '@lib/config'
 
-import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, ButtonStyle, SelectMenuBuilder, InteractionCollector } from 'discord.js'
+import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, ButtonStyle, SelectMenuBuilder, InteractionCollector, ChatInputCommandInteraction, CacheType } from 'discord.js'
 
 import Client, { Channel } from "@lib/discord"
 import Query from "@lib/gamedig"
@@ -33,7 +33,17 @@ Client()
 
 //? Roles
 
+
+
 async function RolesMenu() {
+
+
+    const Roles: any = {
+        project_zomboid: 'Project zomboid',
+        minecraft: 'Minecraft'
+    }
+    
+
 
     const _channel = await Channel(Config.discord.guild, '1038755570154479626')
     const _message: Message = _channel.messages.cache.get('1038821463714709555') || await _channel.messages.fetch('1038821463714709555')
