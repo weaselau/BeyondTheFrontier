@@ -7,7 +7,13 @@ import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, B
 import Client, { Channel } from "@lib/discord"
 import Query from "@lib/gamedig"
 import { embed } from 'Commands'
+import * as Mongo from 'lib/mongo'
 
+
+
+//? Mongo
+
+Mongo.connect()
 
 
 //? Client
