@@ -61,19 +61,19 @@ async function RolesMenu() {
                         value: 'Sandbox Building Game',                    
                     },
                     {
-                        label: 'You can select me too',
-                        description: 'This is a decreption',
-                        value: 'second_option',                       
+                        label: 'test1',
+                        description: 'test1',
+                        value: 'test1',                       
                     },
                     {
-                        label: 'You can select me too',
-                        description: 'This is a decreption',
-                        value: 'second_option', 
+                        label: 'test2',
+                        description: 'test2',
+                        value: 'test2', 
                     },
                     {
-                        label: 'You can select me too',
-                        description: 'This is a decreption',
-                        value: 'second_option',
+                        label: 'test3',
+                        description: 'test3',
+                        value: 'test3',
                     },
                 ),
         )

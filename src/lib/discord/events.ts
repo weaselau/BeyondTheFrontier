@@ -1,12 +1,8 @@
 import * as Discord from 'discord.js'
 import { Guild, _client } from '.'
-import  Client  from '@lib/discord'
+import Client from '@lib/discord'
 
 
-
-//?
-//? Member Role on Join
-//?
 
 
 
@@ -54,4 +50,10 @@ export function onMemberJoin(member: Discord.GuildMember | Discord.PartialGuildM
                 .setColor('Green')
         ]
     })
+
+    let role = member.guild.roles.cache.get('1014218871667961866')
+    if (!role) return
+    role = member.roles.resolve(role)
+    member.roles.add(role)
+
 }
