@@ -81,8 +81,33 @@ export function InteractionSelectMenu(interaction: Discord.SelectMenuInteraction
 
 
 
-            let rtrole = guild.roles.cache.find(role3 => role3.name === 'Rust'); if(!rtrole) return;
+            let rtrole = guild.roles.cache.find(role => role.name === 'Rust'); if(!rtrole) return;
             if (interaction.values.includes('rt')) Member?.roles.add(rtrole)
+
+
+
+            let serole = guild.roles.cache.find(role => role.name === 'Space Engineers'); if(!serole) return;
+            if (interaction.values.includes('se')) Member?.roles.add(serole)
+            
+
+
+            let nsrole = guild.roles.cache.find(role => role.name === 'Northstar'); if(!nsrole) return;
+            if (interaction.values.includes('ns')) Member?.roles.add(nsrole)
+
+
+
+            let ecrole = guild.roles.cache.find(role => role.name === 'Eco'); if(!ecrole) return;
+            if (interaction.values.includes('ec')) Member?.roles.add(ecrole)
+
+
+
+            let ftrole = guild.roles.cache.find(role => role.name === 'Factorio'); if(!ftrole) return;
+            if (interaction.values.includes('ft')) Member?.roles.add(ftrole)
+
+
+
+            let rwrole = guild.roles.cache.find(role => role.name === 'RimWorld'); if(!rwrole) return;
+            if (interaction.values.includes('rw')) Member?.roles.add(rwrole)
 
 
 

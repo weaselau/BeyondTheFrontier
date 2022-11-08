@@ -272,14 +272,29 @@ async function RolesMenu() {
                         value: 'rt',
                     },
                     {
-                        label: 'test2',
-                        description: 'test2',
-                        value: 'd',
+                        label: 'Northstar',
+                        description: 'Northstar Game Role',
+                        value: 'ns',
                     },
                     {
-                        label: 'test3',
-                        description: 'test3',
-                        value: 'e',
+                        label: 'Space Engineers',
+                        description: 'Space Engineers Game Role',
+                        value: 'se',
+                    },
+                    {
+                        label: 'Eco',
+                        description: 'Eco Game Role',
+                        value: 'ec',
+                    },
+                    {
+                        label: 'Factorio',
+                        description: 'Factorio Game Role',
+                        value: 'ft',
+                    },
+                    {
+                        label: 'Rimworld',
+                        description: 'Rimworld Role',
+                        value: 'rw',
                     },
                 ]),
         )
