@@ -11,6 +11,4 @@ import { ChatInputCommandInteraction, CacheType, EmbedBuilder, resolveColor } fr
 
 
 export default {
-
-
 }
