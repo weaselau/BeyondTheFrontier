@@ -65,7 +65,7 @@ Client()
 
 
 
-    
+
 //?
 //? Rules and Infomation Menu
 //?
@@ -169,7 +169,7 @@ async function InfomationMenu() {
                         value: 'Discord Invite link - https://discord.gg/WvQTAeJHt3',
                         inline: false,
                     },
-            )
+                )
                 .setFooter({ text: 'Footer', })
                 .setTimestamp(new Date())
         ]
@@ -210,6 +210,7 @@ async function SupportChannel() {
             new ButtonBuilder()
                 .setCustomId('Primary')
                 .setLabel('Support Ticket')
+                .setEmoji('🎫')
                 .setStyle(ButtonStyle.Success)
         ])
 
@@ -262,6 +263,8 @@ async function RolesMenu() {
             new SelectMenuBuilder()
                 .setCustomId('select')
                 .setPlaceholder('Nothing Selected')
+                .setMinValues(1)
+                .setMaxValues(8)
                 .setOptions([
                     {
                         label: 'Project Zomboid',
