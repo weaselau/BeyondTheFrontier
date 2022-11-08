@@ -35,6 +35,7 @@ Client()
         setInterval(() => {
             RulesMenu()
             InfomationMenu()
+            RolesMenu()
         }, 1000 * 60 * 720)
 
 
@@ -43,7 +44,6 @@ Client()
         //?
 
         setInterval(() => {
-            RolesMenu()
             SupportChannel()
         }, 1000 * 60 * 60)
 
@@ -69,6 +69,8 @@ Client()
 //?
 //? Rules and Infomation Menu
 //?
+
+
 
 async function RulesMenu() {
     const _channel = await Channel(Config.discord.guild, '1025250729717411870')
@@ -192,6 +194,7 @@ async function InfomationMenu() {
 //?
 //? Support Channel
 //?
+
 
 
 async function SupportChannel() {

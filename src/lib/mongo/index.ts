@@ -2,7 +2,8 @@ import * as Mongo from 'mongodb'
 import * as Config from '@lib/config'
 
 export const Collections: {
-    Tickets?: Mongo.Collection
+    Tickets?: Mongo.Collection,
+    Bans?: Mongo.Collection,
 } = {}
 
 export async function connect() {
@@ -15,9 +16,10 @@ export async function connect() {
     const db: Mongo.Db = client.db('BTF')
 
     const Tickets: Mongo.Collection = db.collection('tickets')
+    const Bans: Mongo.Collection = db.collection('bans')
 
     Collections.Tickets = Tickets
-
+    Collections.Bans = Bans
 
     console.log(`Successfully connected to database: ${db.databaseName}`)
 }

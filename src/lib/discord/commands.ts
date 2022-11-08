@@ -6,11 +6,6 @@ import { SlashCommandBuilder } from "discord.js"
 
 //? Variables
 
-const RoleChoices = [
-    { name: 'Project Zomboid', value: 'project_zomboid' },
-    { name: 'Minecraft', value: 'minecraft' }
-]
-
 
 
 //? Commands
@@ -33,6 +28,14 @@ const Commands = [
         .setDescription('Log to Console')
 
         .addStringOption(option => option.setName('text').setDescription('Text to be logged to the Console').setRequired(true)),
+
+
+        
+    new SlashCommandBuilder()
+        .setName('ban')
+        .setDescription('ban command')
+
+
 
 
 ]
