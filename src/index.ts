@@ -374,7 +374,7 @@ async function ProjectZomboid() {
 
 
 
-    Query('przomboid', '120.153.241.223', 16261)
+    Query('przomboid', '1.123.113.178', 16261)
         .then((data: any) => {
 
 
@@ -426,16 +426,17 @@ async function Minecraft() {
     const _channel = await Channel(Config.discord.guild, '1030539047996751903')
     const _message: Message = _channel.messages.cache.get('1031799098803769364') || await _channel.messages.fetch('1031799098803769364')
 
-    if (!_message) return console.log('Minecraft Message could not be found!')
-
-
-
-    Query('minecraft', '120.153.241.223', 25565)
+    Query('minecraft', '1.123.113.178', 25565)
         .then((data: any) => {
 
-            const _players = data.players.join('\n').substring(0, 2000)
-            const _overflow = _players.length == 2000 ? '\n\nThere are more players that cannot be loaded...' : ''
+            if (!_message) return console.log('Minecraft Message could not be found!')
 
+
+            const _rawPlayers = data.players.map((player: any) => {
+                return `${player.name}`
+            })
+            const _players = _rawPlayers.join('\n').substring(0, 2000)
+            const _overflow = _players.length == 2000 ? '\n\nThere are more players that cannot be loaded...' : ''
 
             _message.edit({
                 embeds: [
@@ -443,9 +444,8 @@ async function Minecraft() {
                         .setTitle(data.name)
                         .setColor(resolveColor('#20db16'))
                         .setFields([
-                            { name: 'Player Count', value: `${data.players.length} / ${data.maxplayers}`, inline: false },
-                            { name: 'Map', value: data.map, inline: false },
-                            { name: 'ping', value: '>>> ' + (data.ping) + _overflow, inline: false },
+                            { name: 'Ping', value: '>>> ' + (data.ping) },
+                            { name: 'Max Players', value: '>>> ' + (data.maxplayers) },
                             { name: 'Players', value: '>>> ' + (_players || 'There are No Players Online...') + _overflow, inline: false }
                         ])
                         .setTimestamp(new Date())

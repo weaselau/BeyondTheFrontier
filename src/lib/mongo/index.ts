@@ -3,7 +3,6 @@ import * as Config from '@lib/config'
 
 export const Collections: {
     Tickets?: Mongo.Collection,
-    Bans?: Mongo.Collection,
 } = {}
 
 export async function connect() {
@@ -19,7 +18,6 @@ export async function connect() {
     const Bans: Mongo.Collection = db.collection('bans')
 
     Collections.Tickets = Tickets
-    Collections.Bans = Bans
 
     console.log(`Successfully connected to database: ${db.databaseName}`)
 }
