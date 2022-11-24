@@ -444,8 +444,8 @@ async function Minecraft() {
                         .setTitle(data.name)
                         .setColor(resolveColor('#20db16'))
                         .setFields([
-                            { name: 'Ping', value: '>>> ' + (data.ping) },
-                            { name: 'Max Players', value: '>>> ' + (data.maxplayers) },
+                            { name: 'Player Count', value: `${data.players.length} / ${data.maxplayers}`, inline: false },
+                            { name: 'ping', value: '>>> ' + (data.ping) + _overflow, inline: false },
                             { name: 'Players', value: '>>> ' + (_players || 'There are No Players Online...') + _overflow, inline: false }
                         ])
                         .setTimestamp(new Date())
