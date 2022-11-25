@@ -1,9 +1,11 @@
 import * as Discord from 'discord.js'
 import { Guild, _client } from '.'
 import Client from '@lib/discord'
-import { MembershipScreeningFieldType, TeamMemberMembershipState } from 'discord.js';
+import { channelLink, MembershipScreeningFieldType, TeamMemberMembershipState } from 'discord.js';
 
 import Config from '@lib/config'
+
+import { Collections } from '@lib/mongo/index'
 
 
 
@@ -88,7 +90,7 @@ export function InteractionSelectMenu(interaction: Discord.SelectMenuInteraction
 
             let serole = guild.roles.cache.find(role => role.name === 'Space Engineers'); if(!serole) return;
             if (interaction.values.includes('se')) Member?.roles.add(serole)
-            
+
 
 
             let nsrole = guild.roles.cache.find(role => role.name === 'Northstar'); if(!nsrole) return;
@@ -113,4 +115,32 @@ export function InteractionSelectMenu(interaction: Discord.SelectMenuInteraction
 
         interaction.reply({ephemeral: true, content: 'Role/s added succsessfully'})
     }
+}
+
+export function ButtonPress(interaction: Discord.ButtonInteraction) {
+
+    //TODO: Add Interaction ID Switch Statement
+
+    let OpenTicketsChannel = _client.channels.cache.get('1045376153336172564') //Opens Tickets Channel ID
+    let Guild: Discord.Guild | undefined = _client.guilds.cache.get('614680459728650250')
+
+    if(OpenTicketsChannel === null || OpenTicketsChannel === undefined) return;
+    OpenTicketsChannel.type !== Discord.ChannelType.GuildCategory? { return: null }: null; // I Dont Know What This Is
+    if(!Guild) return;
+    if(!Collections.Tickets) return console.error('Unable To Find The Tickets Collection')
+
+    console.log('Button Detected')
+
+    /*
+    Collections.Tickets.insertOne({})
+
+    Guild?.channels.create({name: `${interaction.user.username.toLowerCase()}-${Collections.Tickets.countDocuments()}`, parent: OpenTicketsChannel})
+
+    */
+
+    //? I Give Up, I've Added Checks Im Not Wasting More Time On This Lets Just Get Koda.
+    //? I DO Know The Code Is Fucked, Yes. But I'm Trying To Remove Errors That Typescript Keeps Giving Me Not Actually "Debug" Persay.
+    //? I Also Know This Code WON'T Work But That Wasnt My Goal, My Goal Was To Remove Any Errors Arising From Any Types Not Working Even
+    //? Though IVE ADDED FUCKING CHECKS
+    //? I'm Tired. I'm Cold. I'm Going To Sleep. Fuck. This. Language.
 }

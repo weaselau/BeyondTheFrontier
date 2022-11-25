@@ -56,6 +56,7 @@ export default function Client(): Promise<Discord.Client> {
                     try {
                         if (interaction.isChatInputCommand()) Commands[interaction.commandName](interaction)
                         else if(interaction.isSelectMenu()) Events.InteractionSelectMenu(interaction)
+                        else if (interaction.isButton()) Events.ButtonPress(interaction)
                     } catch {
                         if (interaction.isChatInputCommand()) interaction.reply({ content: 'This Command does not exist on the Server!', ephemeral: true })
                         else console.log(`Interaction "${interaction.id}" does not exist on the Server!`)
