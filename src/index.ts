@@ -23,6 +23,7 @@ Client()
         RolesMenu()
         ProjectZomboid()
         Minecraft()
+        Space()
         SupportChannel()
         RulesMenu()
         InfomationMenu()
@@ -55,6 +56,7 @@ Client()
         setInterval(() => {
             ProjectZomboid()
             Minecraft()
+            Space()
         }, 1000 * 60 * 3)
     })
 
@@ -459,6 +461,53 @@ async function Minecraft() {
                 embeds: [
                     new EmbedBuilder()
                         .setTitle('Minecraft')
+                        .setColor(resolveColor('#db2525'))
+                        .setDescription('>>> The Server is Offline...')
+                        .setTimestamp(new Date())
+                ]
+            })
+        })
+}
+
+async function Space() {
+    const _channel = await Channel(Config.discord.guild, '1030539047996751903')
+    const _message: Message = _channel.messages.cache.get('1048556966521356330') || await _channel.messages.fetch('1048556966521356330')
+
+    Query('spaceengineers', '1.123.113.178', 27016)
+        .then((data: any) => {
+
+            console.log(data)
+            
+            if (!_message) return console.log('Space Engineers Message could not be found!')
+
+
+            const _rawPlayers = data.players.map((player: any) => {
+                return `${player.name}`
+            })
+            const _players = _rawPlayers.join('\n').substring(0, 2000)
+            const _overflow = _players.length == 2000 ? '\n\nThere are more players that cannot be loaded...' : ''
+
+            _message.edit({
+                embeds: [
+                    new EmbedBuilder()
+                        .setTitle(data.name)
+                        .setColor(resolveColor('#20db16'))
+                        .setFields([
+                            { name: 'Player Count', value: `${data.players.length} / ${data.maxplayers}`, inline: false },
+                            { name: 'ping', value: '>>> ' + (data.ping) + _overflow, inline: false },
+                            { name: 'Players', value: '>>> ' + (_players || 'There are No Players Online...') + _overflow, inline: false }
+                        ])
+                        .setTimestamp(new Date())
+                ]
+            })
+
+        })
+        .catch(() => {
+
+            _message.edit({
+                embeds: [
+                    new EmbedBuilder()
+                        .setTitle('Space Engineers')
                         .setColor(resolveColor('#db2525'))
                         .setDescription('>>> The Server is Offline...')
                         .setTimestamp(new Date())
