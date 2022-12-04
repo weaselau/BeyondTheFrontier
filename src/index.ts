@@ -6,7 +6,6 @@ import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, B
 
 import Client, { Channel } from "@lib/discord"
 import Query from "@lib/gamedig"
-import { embed } from 'Commands'
 import * as Mongo from 'lib/mongo'
 
 
@@ -23,7 +22,7 @@ Client()
         RolesMenu()
         ProjectZomboid()
         Minecraft()
-        Space()
+        SpaceEngineers()
         SupportChannel()
         RulesMenu()
         InfomationMenu()
@@ -56,7 +55,7 @@ Client()
         setInterval(() => {
             ProjectZomboid()
             Minecraft()
-            Space()
+            SpaceEngineers()
         }, 1000 * 60 * 3)
     })
 
@@ -431,6 +430,7 @@ async function Minecraft() {
     Query('minecraft', '1.123.113.178', 25565)
         .then((data: any) => {
 
+
             if (!_message) return console.log('Minecraft Message could not be found!')
 
 
@@ -469,15 +469,14 @@ async function Minecraft() {
         })
 }
 
-async function Space() {
+async function SpaceEngineers() {
     const _channel = await Channel(Config.discord.guild, '1030539047996751903')
     const _message: Message = _channel.messages.cache.get('1048556966521356330') || await _channel.messages.fetch('1048556966521356330')
 
     Query('spaceengineers', '1.123.113.178', 27016)
         .then((data: any) => {
 
-            console.log(data)
-            
+           
             if (!_message) return console.log('Space Engineers Message could not be found!')
 
 
@@ -494,6 +493,8 @@ async function Space() {
                         .setColor(resolveColor('#20db16'))
                         .setFields([
                             { name: 'Player Count', value: `${data.players.length} / ${data.maxplayers}`, inline: false },
+                            { name: 'Map', value: '>>> ' + data.map, inline: false},
+                            { name: 'Password', value: '>>> ' + data.password, inline: false},
                             { name: 'ping', value: '>>> ' + (data.ping) + _overflow, inline: false },
                             { name: 'Players', value: '>>> ' + (_players || 'There are No Players Online...') + _overflow, inline: false }
                         ])
