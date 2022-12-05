@@ -67,6 +67,7 @@ export default function Client(): Promise<Discord.Client> {
 
             _client.on('guildMemberAdd', (member) => Events.onMemberJoin(member))
             _client.on('guildMemberRemove', (member) => Events.onMemberLeave(member))
+            _client.on('channelDelete', (channel) => Events.onChannelDelete(channel))
 
         } else resolve(_client)
 
