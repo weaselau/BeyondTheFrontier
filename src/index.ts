@@ -226,7 +226,7 @@ async function SupportChannel() {
             new EmbedBuilder()
                 .setTitle('**Server Support Channel**')
                 .setColor(resolveColor('#567fe8'))
-                .setDescription('>>> Need Help? Our staff are here to support you and the problems you are facing. \n\n test')
+                .setDescription('>>> Need Help? Our staff are here to support you and the problems you are facing. \n\n')
                 .setTimestamp(new Date())
         ], components: [button]
 
