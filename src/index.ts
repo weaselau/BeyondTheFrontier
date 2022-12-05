@@ -477,7 +477,6 @@ async function SpaceEngineers() {
            
             if (!_message) return console.log('Space Engineers Message could not be found!')
 
-
             const _rawPlayers = data.players.map((player: any) => {
                 return `${player.name}`
             })
