@@ -121,9 +121,9 @@ export async function ButtonPress(interaction: Discord.ButtonInteraction) {
 
     switch (interaction.customId) {
         case 'Primary':
-            let OpenTicketsChannel = _client.channels.cache.get('1045376153336172564') //Opens Tickets Channel ID
+            let OpenTicketsChannel: Discord.Channel | undefined = _client.channels.cache.get('1045376153336172564') //Opens Tickets Channel ID
             let Guild: Discord.Guild | undefined = _client.guilds.cache.get('614680459728650250')
-
+            if(OpenTicketsChannel?.type !== Discord.ChannelType.GuildCategory) return;
             if(OpenTicketsChannel === null || OpenTicketsChannel === undefined) return;
             OpenTicketsChannel.type !== Discord.ChannelType.GuildCategory? { return: null }: null; // I Dont Know What This Is
             if(!Guild) return;
@@ -196,6 +196,7 @@ export async function ButtonPress(interaction: Discord.ButtonInteraction) {
 
         case 'button-full-close':
             let ClosedTicketsChannel = _client.channels.cache.get('1045376256524435497')
+            if(ClosedTicketsChannel?.type !== Discord.ChannelType.GuildCategory) return;
             if(interaction.channel?.type !== Discord.ChannelType.GuildText) return;
             interaction.channel.edit({parent: ClosedTicketsChannel})
             interaction.deferUpdate()
