@@ -2,11 +2,12 @@
 
 import Config from '@lib/config'
 
-import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, ButtonStyle, SelectMenuBuilder, InteractionCollector, ChatInputCommandInteraction, CacheType, AnyComponentBuilder } from 'discord.js'
+import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, ButtonStyle, SelectMenuBuilder, InteractionCollector, ChatInputCommandInteraction, CacheType, AnyComponentBuilder, ActivityType } from 'discord.js'
 
 import Client, { Channel } from "@lib/discord"
 import Query from "@lib/gamedig"
 import * as Mongo from 'lib/mongo'
+import { MongoBatchReExecutionError } from 'mongodb'
 
 
 
@@ -374,7 +375,7 @@ async function ProjectZomboid() {
 
 
 
-    Query('przomboid', '1.123.113.178', 16261)
+    Query('przomboid', '192.168.0.84', 16261)
         .then((data: any) => {
 
 
@@ -426,7 +427,7 @@ async function Minecraft() {
     const _channel = await Channel(Config.discord.guild, '1030539047996751903')
     const _message: Message = _channel.messages.cache.get('1031799098803769364') || await _channel.messages.fetch('1031799098803769364')
 
-    Query('minecraft', '1.123.113.178', 25565)
+    Query('minecraft', '192.168.0.84', 25565)
         .then((data: any) => {
 
 
@@ -472,7 +473,7 @@ async function SpaceEngineers() {
     const _channel = await Channel(Config.discord.guild, '1030539047996751903')
     const _message: Message = _channel.messages.cache.get('1048556966521356330') || await _channel.messages.fetch('1048556966521356330')
 
-    Query('spaceengineers', '1.123.113.178', 27016)
+    Query('spaceengineers', '192.168.0.84', 27016)
         .then((data: any) => {
 
            
