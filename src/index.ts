@@ -375,7 +375,7 @@ async function ProjectZomboid() {
 
 
 
-    Query('przomboid', '192.168.0.84', 16261)
+    Query('przomboid', '101.182.180.77', 16261)
         .then((data: any) => {
 
 
@@ -427,7 +427,7 @@ async function Minecraft() {
     const _channel = await Channel(Config.discord.guild, '1030539047996751903')
     const _message: Message = _channel.messages.cache.get('1031799098803769364') || await _channel.messages.fetch('1031799098803769364')
 
-    Query('minecraft', '192.168.0.84', 25565)
+    Query('minecraft', '101.182.180.77', 25565)
         .then((data: any) => {
 
 
@@ -473,7 +473,7 @@ async function SpaceEngineers() {
     const _channel = await Channel(Config.discord.guild, '1030539047996751903')
     const _message: Message = _channel.messages.cache.get('1048556966521356330') || await _channel.messages.fetch('1048556966521356330')
 
-    Query('spaceengineers', '192.168.0.84', 27016)
+    Query('spaceengineers', '101.182.180.77', 27016)
         .then((data: any) => {
 
            
