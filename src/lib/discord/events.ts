@@ -111,6 +111,7 @@ export function InteractionSelectMenu(interaction: Discord.SelectMenuInteraction
             let rwrole = guild.roles.cache.find(role => role.name === 'RimWorld'); if(!rwrole) return;
             if (interaction.values.includes('rw')) Member?.roles.add(rwrole)
 
+            
             let dzrole = guild.roles.cache.find(role => role.name === 'Dayz'); if(!rwrole) return;
             if (interaction.values.includes('dz')) Member?.roles.add(rwrole)
 
