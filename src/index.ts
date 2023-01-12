@@ -270,7 +270,7 @@ async function RolesMenu() {
                 .setCustomId('select')
                 .setPlaceholder('Nothing Selected')
                 .setMinValues(1)
-                .setMaxValues(8)
+                .setMaxValues(9)
                 .setOptions([
                     {
                         label: 'Project Zomboid',
@@ -319,6 +319,12 @@ async function RolesMenu() {
                         description: 'Rimworld Role',
                         value: 'rw',
                         emoji: '🎒',
+                    },
+                    {
+                        label: 'DayZ',
+                        description: 'DayZ Role',
+                        value: 'dz',
+                        emoji: '',
                     },
                 ]),
         )
