@@ -324,7 +324,7 @@ async function RolesMenu() {
                         label: 'DayZ',
                         description: 'DayZ Role',
                         value: 'dz',
-                        emoji: '',
+                        emoji: '☠️',
                     },
                 ]),
         )
