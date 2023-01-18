@@ -15,7 +15,6 @@ export async function connect() {
     const db: Mongo.Db = client.db('BTF')
 
     const Tickets: Mongo.Collection = db.collection('tickets')
-    const Bans: Mongo.Collection = db.collection('bans')
 
     Collections.Tickets = Tickets
 
