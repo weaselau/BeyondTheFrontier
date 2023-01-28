@@ -44,7 +44,7 @@ export default function Client(): Promise<Discord.Client> {
                 console.log(`Logged in as ${_client.user?.tag || '"Unknown"'}`)
                 if (_client.user) resolve(_client)
                 else reject('Client is not ready!')
-                
+
                 //? Register Global Commands
                 _client.application?.commands.set(GlobalCommands)
                     .then(() => console.log(`${GlobalCommands.length}x Slash Commands Successfully Reloaded`))

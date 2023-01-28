@@ -1,15 +1,12 @@
 //? Dependencies
 
 import Config from '@lib/config'
-
 import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, ButtonStyle, SelectMenuBuilder, InteractionCollector, ChatInputCommandInteraction, CacheType, AnyComponentBuilder, ActivityType } from 'discord.js'
-
 import Client, { Channel } from "@lib/discord"
 import Query from "@lib/gamedig"
 import * as Mongo from 'lib/mongo'
-import { MongoBatchReExecutionError } from 'mongodb'
-
-
+import { _client } from '@lib/discord/index'
+import Discord from 'discord.js'
 
 //? Mongo
 
@@ -27,7 +24,7 @@ Client()
         SupportChannel()
         RulesMenu()
         InfomationMenu()
-
+        MemberCount()
 
         //?
         //? 12 Hour update time
@@ -57,13 +54,20 @@ Client()
             ProjectZomboid()
             Minecraft()
             SpaceEngineers()
+            MemberCount()
         }, 1000 * 60 * 3)
     })
 
 
-
-
-
+    async function MemberCount(){
+        _client.user?.setPresence({
+            status: 'online',
+            activities: [{
+                type: Discord.ActivityType.Watching,
+                name: `${_client.guilds.cache.get(Config.discord.guild)?.memberCount} Members`
+            }]
+        })
+    }
 
 
 

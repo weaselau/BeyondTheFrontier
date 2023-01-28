@@ -30,7 +30,7 @@ const Commands = [
         .addStringOption(option => option.setName('text').setDescription('Text to be logged to the Console').setRequired(true)),
 
 
-        
+
     new SlashCommandBuilder()
         .setName('ban')
         .setDescription('ban command')
