@@ -1,9 +1,10 @@
+//? Dependencies
 import Query from "@lib/gamedig"
 import Client, { Channel } from "@lib/discord"
 import { _client } from '@lib/discord/index'
 import Config from '@lib/config'
 import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, ButtonStyle, SelectMenuBuilder, InteractionCollector, ChatInputCommandInteraction, CacheType, AnyComponentBuilder, ActivityType } from 'discord.js'
-
+//? Dependencies
 
 
 export default async function Minecraft() {
