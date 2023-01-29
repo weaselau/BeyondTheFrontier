@@ -1,6 +1,6 @@
 //? Dependencies
 import * as Discord from 'discord.js'
-import { Guild, _client } from '.'
+import { Guild, _client } from '@lib/discord/index'
 import Client from '@lib/discord'
 import { channelLink, MembershipScreeningFieldType, TeamMemberMembershipState } from 'discord.js';
 //? Dependencies

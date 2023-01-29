@@ -3,10 +3,7 @@
 import Config from '@lib/config'
 import { Message, EmbedBuilder, resolveColor, ActionRowBuilder, ButtonBuilder, ButtonStyle, SelectMenuBuilder, InteractionCollector, ChatInputCommandInteraction, CacheType, AnyComponentBuilder, ActivityType } from 'discord.js'
 import Client, { Channel } from "@lib/discord"
-import Query from "@lib/gamedig"
-import * as Mongo from 'lib/mongo'
 import { _client } from '@lib/discord/index'
-import Discord from 'discord.js'
 
 //? Dependencies
 
