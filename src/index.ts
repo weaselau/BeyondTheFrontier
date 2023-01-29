@@ -18,7 +18,7 @@ import { Minecraft, ProjectZomboid, SpaceEngineers } from '@lib/Gamedig/index'
 
 //? RulesInfo
 
-import { RulesMenu, InfomationMenu } from '@lib/discord/RulesInfo/index'
+import { RulesMenu, InfomationMenu } from '@lib/templates/RulesInfo/index'
 
 
 

@@ -11,9 +11,9 @@ import * as _commands from '../../Commands'
 
 import * as Events from '@lib/discord/events'
 
-import * as LeaveJoin from '@lib/discord/Events/index'
+import * as LeaveJoin from '@lib/templates/Events/index'
 
-import * as Roles from '@lib/discord/Roles/index'
+import * as Roles from '@lib/templates/Roles/index'
 
 
 
