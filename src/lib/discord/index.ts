@@ -11,6 +11,13 @@ import * as _commands from '../../Commands'
 
 import * as Events from '@lib/discord/events'
 
+import * as LeaveJoin from '@lib/discord/Events/index'
+
+import * as Roles from '@lib/discord/Roles/index'
+
+
+
+
 
 
 //? Client
@@ -55,7 +62,7 @@ export default function Client(): Promise<Discord.Client> {
                 _client.on('interactionCreate', interaction => {
                     try {
                         if (interaction.isChatInputCommand()) Commands[interaction.commandName](interaction)
-                        else if(interaction.isSelectMenu()) Events.InteractionSelectMenu(interaction)
+                        else if(interaction.isSelectMenu()) Roles.InteractionSelectMenu(interaction)
                         else if (interaction.isButton()) Events.ButtonPress(interaction)
                     } catch {
                         if (interaction.isChatInputCommand()) interaction.reply({ content: 'This Command does not exist on the Server!', ephemeral: true })
@@ -65,8 +72,11 @@ export default function Client(): Promise<Discord.Client> {
 
             })
 
-            _client.on('guildMemberAdd', (member) => Events.onMemberJoin(member))
-            _client.on('guildMemberRemove', (member) => Events.onMemberLeave(member))
+            _client.on('guildMemberAdd', (member) => LeaveJoin.onMemberJoin(member))
+            _client.on('guildMemberRemove', (member) => LeaveJoin.onMemberLeave(member))
+
+
+
             _client.on('channelDelete', (channel) => Events.onChannelDelete(channel))
 
         } else resolve(_client)
