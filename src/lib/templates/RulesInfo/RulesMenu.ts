@@ -45,7 +45,7 @@ export default async function RulesMenu() {
                     },
                     {
                         name: 'Rules',
-                        value: '1. Respect all Members and Staff. \n 2. No bullying of any kind. \n 3. No posting personal info about others under any circumstance. \n 4. No Racism. \n 5. No Homophobic behaviour',
+                        value: '1. Respect all Members and Staff. \n 2. No bullying of any kind. \n 3. No posting personal info about others under any circumstance. \n 4. No Racism. \n 5. No Homophobic behaviour \n',
                         inline: true,
                     },
                     {
