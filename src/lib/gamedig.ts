@@ -18,6 +18,6 @@ export default function (game: 'przomboid' | 'minecraft' | 'spaceengineers', hos
         }).catch((error) => {
             reject(error)
         })
-        
+
     })
 }
