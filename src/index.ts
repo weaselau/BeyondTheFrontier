@@ -14,16 +14,9 @@ import Discord from 'discord.js'
 
 import { Minecraft, ProjectZomboid, SpaceEngineers } from '@lib/Gamedig/index'
 
-//? RulesInfo
+//? Templates
 
-import { RulesMenu, InfomationMenu } from '@lib/templates/RulesInfo/index'
-import { RolesMenu } from '@lib/templates/Roles/index'
-
-//? Support
-
-import { SupportChannel } from '@lib/templates/Embeds'
-
-
+import { RulesMenu, InfomationMenu, RolesMenu, SupportChannel } from '@lib/templates/index'
 
 
 //? Mongo

@@ -9,11 +9,11 @@ import GlobalCommands from '@lib/discord/commands'
 
 import * as _commands from '../../Commands'
 
+
+//? Events, Templates and Roles
 import * as Events from '@lib/discord/events'
-
-import * as LeaveJoin from '@lib/templates/Events/index'
-
-import * as Roles from '@lib/templates/Roles/index'
+import * as LeaveJoin from '@lib/templates/index'
+import * as Roles from '@lib/templates/index'
 
 
 
