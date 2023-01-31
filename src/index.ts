@@ -12,7 +12,7 @@ import Discord from 'discord.js'
 
 //? GameDig Import
 
-import { Minecraft, ProjectZomboid, SpaceEngineers } from '@lib/Gamedig/index'
+import { Minecraft, ProjectZomboid, SpaceEngineers, Dayz } from '@lib/Gamedig/index'
 
 //? Templates
 
@@ -31,13 +31,18 @@ Mongo.connect()
 
 Client()
     .then(client => {
-        RolesMenu()
+
         ProjectZomboid()
         Minecraft()
         SpaceEngineers()
-        SupportChannel()
+        Dayz()
+
+
+        RolesMenu()
         RulesMenu()
         InfomationMenu()
+        SupportChannel()
+
         MemberCount()
         setInterval(() => {
             RulesMenu()
@@ -51,6 +56,9 @@ Client()
             ProjectZomboid()
             Minecraft()
             SpaceEngineers()
+            Dayz()
+
+
             MemberCount()
         }, 1000 * 60 * 3)
     })
