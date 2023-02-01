@@ -15,9 +15,13 @@ export default async function SupportChannel() {
     if (!_message) return console.log('Support Channel Message could not be found!')
 
 
+
+
+
+
+
+
     //? Button Menu
-
-
     const button = new ActionRowBuilder<ButtonBuilder>()
         .addComponents([
             new ButtonBuilder()
@@ -28,8 +32,15 @@ export default async function SupportChannel() {
         ])
 
 
-    //? Support Embed
 
+
+
+
+
+
+
+
+    //? Support Embed
     _message.edit({
         embeds: [
             new EmbedBuilder()
