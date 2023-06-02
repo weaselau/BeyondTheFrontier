@@ -131,3 +131,4 @@ dist
 config.json
 *.bat
 *.pem
+src/lib/config.json
