@@ -11,7 +11,6 @@ interface Model {
         id: string
         token: string
         guild: string
-        mongourl: string
     }
 }
 
