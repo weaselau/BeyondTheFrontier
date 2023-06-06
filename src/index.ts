@@ -23,7 +23,7 @@ Client()
             status: 'online',
             activities: [{
                 type: Discord.ActivityType.Watching,
-                name: ``
+                name: `${Query.players === undefined? 'Server Offline': Query.players.length} / ${Query.maxplayers}`
             }]
         })
     }
